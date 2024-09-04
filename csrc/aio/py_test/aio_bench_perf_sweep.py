@@ -114,7 +114,7 @@ def get_sweep_cmd_lines(sweep_config_dict):
     def flatten_options(key, value_list):
         flat_list = []
         for v in value_list:
-            if not type(v) is bool:
+            if type(v) is not bool:
                 flat_list.append(f'--{key} {v}')
             elif v:
                 flat_list.append(f'--{key}')
